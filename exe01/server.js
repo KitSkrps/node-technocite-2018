@@ -34,7 +34,7 @@
 
 // autre facon d ecrire
 
-//boucler dans l array et renvoi un nouelle array
+//map boucler dans l array et renvoi un nouelle array
 // const numbers = [1,2,3,4,5,6,7,8]
 // function dblNumbers(arr){
 //     //return arr.map(item=>item*2)
