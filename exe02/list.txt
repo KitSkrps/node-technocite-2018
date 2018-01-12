@@ -1,5 +1,4 @@
 Bryan
-Davy
 Jeremy
 Katherini
 Steve
@@ -9,4 +8,3 @@ Mathias
 Stéphane
 Baudoin
 Olivier
-Lauri
