@@ -1,0 +1,22 @@
+[
+    {
+        "name": "Julien",
+        "age" : 43,
+        "countrie": "Mexico"
+    },
+    {
+        "name": "Marie",
+        "age" : 23,
+        "countrie": "France"
+    },
+    {
+        "name": "Marc",
+        "age" : 35,
+        "countrie": "Holland"
+    },
+    {
+        "name": "Paul",
+        "age" : 48,
+        "countrie": "U.S.A"
+    }
+]

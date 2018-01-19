@@ -17,12 +17,18 @@ module.exports = (req,res) =>{
             formData += data
         }))
         req.on('end', () =>{
-            console.log('write to file', formData)
             read(`${process.cwd()}/models/books?json`)
                 .then(data =>{
-                    let tempArr = JSON.parse(data).push(JSON.parse(formData))
+                    let tempArr = JSON.parse(data)
+                    let jsonObject = JSON.parse(formData)
+                    tempArr.push(jsonObject)
+                    write(`${process.cwd()}/models/books.json`,JSON.stringify(tempArr))
+                        .then(() =>{
+                            console.log(tempArr)
+                            res.end(JSON.stringify(tempArr))
+                        })
                     console.log(tempArr)
-                })
-        })
+                }).catch(e=>{console.log(e)})
+        })  
     }
 }
