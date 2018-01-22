@@ -1,0 +1,19 @@
+<h2>Add Magasin</h2>
+<form action="#" class="card" method="POST" enctype="multipart/form-data">
+    <label for="name">
+        Name:
+        <input type="text" name="name" id="name" value={{magsin.name}}>
+    </label>
+    <label for="slug">
+        Slug:
+        <input type="text" name="slug" id="slug" value={{magsin.slug}}>
+    </label>
+    <label for="description">
+        Description :
+        <textarea name="description" id="description" cols="30" rows="10">{{magasin.description}}</textarea>
+    </label>
+    <label for="photo">
+        <input type="file" name="photo" id="photo" accept="image/png,image/jpeg,image/gif" value="{{magasin.photo}}">
+    </label>
+    <input type="submit" name="Ajouter un magasin">
+</form>
