@@ -19,6 +19,15 @@ exports.getMagasinBySlug=async (req,res)=>{
     console.log(magasin);
     res.render('magasin_details',{magasin:magasin})
 }
+exports.editMagasin = async (req,res)=>{
+    const magasin = await Magasin.findOne({_id:req.params.id})
+    if(!magasin) return next()
+    res.render('magasin_edit',{"magasin":magasin})
+}
+exports.updateMagasin = async (req,res) => {
+    const magasin = await Magasin.findByIdAndUpdate({_id : req.params.id},req.body,{new:true}).exec()
+    res.redirect(`/magasins/${magasin.slug}`)
+}
 const multerOptions= {
     storage: multer.memoryStorage(),
     fileFilter(req, file, next){

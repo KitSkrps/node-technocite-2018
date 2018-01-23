@@ -15,6 +15,22 @@ const schema = new mongoose.Schema({
     },
     photo:{
         type:String
+    },
+    location:{
+        type:{
+            type:String,
+            default:'Point'
+        },
+        coordinates:[
+            {
+                type:Number,
+                required:'vous devez entrer des coordonnées'
+            }
+        ],
+        address:{
+            type:String,
+            required:'Vous devez fournir une adresse'
+        }
     }
 })
 
