@@ -3,10 +3,11 @@ const router = express.Router()
 const pagesController = require (`${process.cwd()}/controllers/pagesController`)
 const magasinsController = require (`${process.cwd()}/controllers/magasinsController`)
 const userController = require (`${process.cwd()}/controllers/userController`)
+const authenticationController = require (`${process.cwd()}/controllers/authenticationController`)
 
 router.get('/', pagesController.home)
 //aller sur la page
-router.get('/magasins/add', magasinsController.addMagasin)
+router.get('/magasins/add', authenticationController.isLoggedIn, magasinsController.addMagasin)
 //recuperer les informations
 router.get('/login', userController.loginForm)
 router.get('/register', userController.registerForm)
@@ -22,6 +23,9 @@ router.post('/magasins/add/:id',
     magasinsController.updateMagasin)
 router.get('/magasins/:id/edit', magasinsController.editMagasin)
 router.get('/about', pagesController.about)
+
+router.post('/login', authenticationController.login)
+router.get('/logout', authenticationController.logout)
 
 router.post('/register', userController.validateRegister, userController.register)
 module.exports = router

@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 const passportLocalMongoose = require ('passport-local-mongoose')
-const validator = require('validator-js')
+const validator = require('validator')
 const schema = new mongoose.Schema({
     email:{
         type:String,
